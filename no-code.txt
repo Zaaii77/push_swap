@@ -1,0 +1,40 @@
+Si la stack est de taille 3
+	three_sort();
+Si la stack est de 2 et pas triee
+	sa();
+Si la stack est plus grande que 3 et inferieur a 6
+	sort_pour_5();
+Si la stack est plus grande que 5
+	sort();
+
+
+sort =
+	push les deux premiers nodes au top de b (pb, pb);
+while size > 3 && pas sort
+	set les index des noeuds
+	set la valeur la plus proche inferieure (sinon la max de la stack)
+	set le minimum de move
+	push a to b
+three_sort();
+while size b > 0
+	set les index
+	set la valeur la plus proche superieure (sinon la min de la stack)
+	push b to a
+mettre le min au top stack a;
+
+push a to b
+
+	trouver le best node to move
+	if best above median est egal a best target above median
+	si best est avant mediane et best-target est avant mediane
+		rr
+	else
+		rrr
+move best on top (a)
+move best on top (b)
+push b(a, b);
+
+push to a
+	move best on top (a, b->top->target)
+	pa(a, b);
+
