@@ -6,7 +6,7 @@
 /*   By: lowatell <lowatell@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/24 23:33:57 by lowatell          #+#    #+#             */
-/*   Updated: 2024/11/25 01:03:45 by lowatell         ###   ########.fr       */
+/*   Updated: 2024/11/25 15:00:53 by lowatell         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,7 +34,7 @@ void	fill_stack(t_stack *a, int nb)
 		return ;
 	node = new_node(nb);
 	if (!node)
-		return ;//FREE ALL
+		return ;
 	if (a->bot)
 	{
 		a->bot->next = node;
@@ -52,7 +52,7 @@ t_stack	*stack_init(void)
 
 	stack = (t_stack *)malloc(sizeof(t_stack));
 	if (!stack)
-		return (NULL); //FREE ALL
+		return (NULL);
 	stack->size = 0;
 	stack->top = NULL;
 	stack->bot = NULL;
