@@ -6,7 +6,7 @@
 /*   By: lowatell <lowatell@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/24 23:20:47 by lowatell          #+#    #+#             */
-/*   Updated: 2024/11/25 14:51:37 by lowatell         ###   ########.fr       */
+/*   Updated: 2024/11/25 17:46:24 by lowatell         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -59,5 +59,24 @@ void	rrr(t_stack *a, t_stack *b);
 void	push(t_stack *a, t_stack *b);
 void	pb(t_stack *a, t_stack *b);
 void	pa(t_stack *a, t_stack *b);
+
+void	min_on_top(t_stack *stack, int less_six);
+void	best_on_top(t_stack *stack, t_node *best, int a);
+void	a_to_b(t_stack *a, t_stack *b);
+void	b_to_a(t_stack *a, t_stack *b);
+
+t_node	*max_value(t_stack *stack);
+t_node	*min_value(t_stack *stack);
+t_node	*best_min_move(t_stack *stack);
+void	set_index(t_stack *a, t_stack *b);
+void	set_min_closer(t_stack *a, t_stack *b);
+void	set_max_closer(t_stack *b, t_stack *a);
+void	set_min_moves(t_stack *a, t_stack *b);
+void	set_index_node(t_node *tmp, int i, int med);
+int		is_stack_sorted(t_stack *a);
+
+void	three_sort(t_stack *a);
+void	sort(t_stack *a, t_stack *b);
+void	push_swap(t_stack *a, t_stack *b, int less_six);
 
 #endif

@@ -1,33 +1,36 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.c                                             :+:      :+:    :+:   */
+/*   utils3.c                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: lowatell <lowatell@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/11/24 23:33:30 by lowatell          #+#    #+#             */
-/*   Updated: 2024/11/25 17:34:38 by lowatell         ###   ########.fr       */
+/*   Created: 2024/11/25 16:28:03 by lowatell          #+#    #+#             */
+/*   Updated: 2024/11/25 17:18:15 by lowatell         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../inc/push_swap.h"
 
-int	main(int ac, char **av)
+void	best_on_top(t_stack *stack, t_node *best, int a)
 {
-	t_stack	*a;
-	t_stack	*b;
-	int		i;
-	int		data;
-
-	a = stack_init();
-	b = stack_init();
-	i = 1;
-	while (i < ac)
+	if (!best)
+		return ;
+	while (stack->top != best)
 	{
-		data = ft_atoi(av[i]);
-		fill_stack(a, data);
-		i++;
+		if (a)
+		{
+			if (best->above_median)
+				ra(stack);
+			else
+				rra(stack);
+		}
+		else
+		{
+			if (best->above_median)
+				rb(stack);
+			else
+				rrb(stack);
+		}
 	}
-	sort(a, b);
-	print_stack(a);
 }
