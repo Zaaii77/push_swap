@@ -6,7 +6,7 @@
 #    By: lowatell <lowatell@student.s19.be>         +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/08/20 13:23:46 by lowatell          #+#    #+#              #
-#    Updated: 2024/11/22 15:56:09 by lowatell         ###   ########.fr        #
+#    Updated: 2024/11/25 00:39:09 by lowatell         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -20,7 +20,7 @@ OBJS_DIR = objs
 
 NAME = push_swap
 
-SRCS = 	
+SRCS = main.c node_utils.c swap.c	
 
 OBJS = $(addprefix $(OBJS_DIR)/, $(SRCS:.c=.o))
 
