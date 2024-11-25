@@ -6,7 +6,7 @@
 /*   By: lowatell <lowatell@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/24 23:33:57 by lowatell          #+#    #+#             */
-/*   Updated: 2024/11/25 19:09:32 by lowatell         ###   ########.fr       */
+/*   Updated: 2024/11/25 19:45:38 by lowatell         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,15 +26,15 @@ t_node	*new_node(int nb)
 	return (node);
 }
 
-void	add_node_back(t_stack *a, int nb)
+int	add_node_back(t_stack *a, int nb)
 {
 	t_node	*node;
 
 	if (!a)
-		return ;
+		return (0);
 	node = new_node(nb);
 	if (!node)
-		return ;
+		return (0);
 	if (a->bot)
 	{
 		a->bot->next = node;
@@ -44,6 +44,7 @@ void	add_node_back(t_stack *a, int nb)
 		a->top = node;
 	a->bot = node;
 	a->size++;
+	return (1);
 }
 
 t_stack	*stack_init(void)

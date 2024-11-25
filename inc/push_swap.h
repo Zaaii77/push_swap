@@ -6,7 +6,7 @@
 /*   By: lowatell <lowatell@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/24 23:20:47 by lowatell          #+#    #+#             */
-/*   Updated: 2024/11/25 19:30:15 by lowatell         ###   ########.fr       */
+/*   Updated: 2024/11/25 20:41:04 by lowatell         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,7 +39,9 @@ void	print_stack_rev(t_stack *a);
 
 t_node	*new_node(int nb);
 t_stack	*stack_init(void);
-void	add_node_back(t_stack *a, int nb);
+void	free_stack(t_stack *a);
+int		add_node_back(t_stack *a, int nb);
+int		add_all(char **av, t_stack *a);
 
 void	swap(t_stack *s);
 void	sa(t_stack *a);
@@ -84,5 +86,8 @@ int		is_dup(char **av);
 int		is_int_max(char *s);
 int		check_tab(char **av);
 int		arg_parsing(int ac, char **av);
+
+int		fill_stack(int ac, char **av, t_stack *a);
+void	print_error(void);
 
 #endif

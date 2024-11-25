@@ -6,7 +6,7 @@
 /*   By: lowatell <lowatell@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/25 19:00:46 by lowatell          #+#    #+#             */
-/*   Updated: 2024/11/25 19:06:22 by lowatell         ###   ########.fr       */
+/*   Updated: 2024/11/25 20:18:44 by lowatell         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,8 +15,8 @@
 long long	ft_atol(const char *s)
 {
 	unsigned long long	nbr;
-	int			sign;
-	size_t	i;
+	int					sign;
+	size_t				i;
 
 	i = 0;
 	sign = 1;

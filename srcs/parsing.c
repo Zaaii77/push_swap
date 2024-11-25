@@ -6,7 +6,7 @@
 /*   By: lowatell <lowatell@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/25 19:08:15 by lowatell          #+#    #+#             */
-/*   Updated: 2024/11/25 19:28:07 by lowatell         ###   ########.fr       */
+/*   Updated: 2024/11/25 20:09:14 by lowatell         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -78,7 +78,7 @@ int	check_tab(char **av)
 	while (av[i])
 	{
 		if (is_int_max(av[i]) || !is_integer(av[i]))
-			return (0)
+			return (0);
 		i++;
 	}
 	return (1);
@@ -92,9 +92,9 @@ int	arg_parsing(int ac, char **av)
 		return (0);
 	else if (!av[1][0])
 		return (0);
-	if (ac < 2)
+	else if (ac < 2)
 		return (0);
-	if (ac == 2)
+	else if (ac == 2)
 	{
 		tab = ft_split(av[1], ' ');
 		if (!tab || !check_tab(tab))
