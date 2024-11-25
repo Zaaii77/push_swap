@@ -6,7 +6,7 @@
 /*   By: lowatell <lowatell@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/24 23:33:57 by lowatell          #+#    #+#             */
-/*   Updated: 2024/11/25 15:50:13 by lowatell         ###   ########.fr       */
+/*   Updated: 2024/11/25 19:09:32 by lowatell         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,7 +26,7 @@ t_node	*new_node(int nb)
 	return (node);
 }
 
-void	fill_stack(t_stack *a, int nb)
+void	add_node_back(t_stack *a, int nb)
 {
 	t_node	*node;
 

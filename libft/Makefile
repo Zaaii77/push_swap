@@ -6,7 +6,7 @@
 #    By: lowatell <lowatell@student.s19.be>         +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/08/20 13:23:46 by lowatell          #+#    #+#              #
-#    Updated: 2024/11/14 20:06:53 by lowatell         ###   ########.fr        #
+#    Updated: 2024/11/25 19:29:17 by lowatell         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -31,6 +31,7 @@ SRCS =	ft_isalpha.c ft_isdigit.c ft_isalnum.c ft_isascii.c \
 		ft_strjoin.c ft_strtrim.c ft_split.c ft_itoa.c \
 		ft_strmapi.c ft_striteri.c ft_putchar_fd.c \
 		ft_putstr_fd.c ft_putendl_fd.c ft_putnbr_fd.c \
+		ft_atol.c free_tab.c\
 
 OBJS = $(addprefix $(SRC_DIR)/, $(SRCS:.c=.o))
 

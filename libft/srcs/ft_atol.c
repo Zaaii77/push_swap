@@ -1,33 +1,38 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.c                                             :+:      :+:    :+:   */
+/*   ft_atol.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: lowatell <lowatell@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/11/24 23:33:30 by lowatell          #+#    #+#             */
-/*   Updated: 2024/11/25 19:09:57 by lowatell         ###   ########.fr       */
+/*   Created: 2024/11/25 19:00:46 by lowatell          #+#    #+#             */
+/*   Updated: 2024/11/25 19:06:22 by lowatell         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../inc/push_swap.h"
+#include "../incs/libft.h"
 
-int	main(int ac, char **av)
+long long	ft_atol(const char *s)
 {
-	t_stack	*a;
-	t_stack	*b;
-	int		i;
-	int		data;
+	unsigned long long	nbr;
+	int			sign;
+	size_t	i;
 
-	a = stack_init();
-	b = stack_init();
-	i = 1;
-	while (i < ac)
+	i = 0;
+	sign = 1;
+	nbr = 0;
+	while (s[i] == 32 || (s[i] >= 9 && s[i] <= 13))
+		i++;
+	if (s[i] == '-' || s[i] == '+')
 	{
-		data = ft_atoi(av[i]);
-		add_node_back(a, data);
+		if (s[i] == '-')
+			sign = -1;
 		i++;
 	}
-	sort(a, b);
-	print_stack(a);
+	while (ft_isdigit(s[i]))
+	{
+		nbr = (nbr * 10) + (s[i] - 48);
+		i++;
+	}
+	return (nbr * sign);
 }

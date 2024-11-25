@@ -1,33 +1,30 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.c                                             :+:      :+:    :+:   */
+/*   free_tab.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: lowatell <lowatell@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/11/24 23:33:30 by lowatell          #+#    #+#             */
-/*   Updated: 2024/11/25 19:09:57 by lowatell         ###   ########.fr       */
+/*   Created: 2024/11/25 19:24:17 by lowatell          #+#    #+#             */
+/*   Updated: 2024/11/25 19:25:18 by lowatell         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../inc/push_swap.h"
+#include "../incs/libft.h"
 
-int	main(int ac, char **av)
+void	free_tab(char **tab)
 {
-	t_stack	*a;
-	t_stack	*b;
-	int		i;
-	int		data;
+	int	i;
 
-	a = stack_init();
-	b = stack_init();
-	i = 1;
-	while (i < ac)
+	if (!tab)
+		return ;
+	i = 0;
+	while (tab[i])
 	{
-		data = ft_atoi(av[i]);
-		add_node_back(a, data);
+		free(tab[i]);
+		tab[i] = NULL;
 		i++;
 	}
-	sort(a, b);
-	print_stack(a);
+	free(tab);
+	tab = NULL;
 }
