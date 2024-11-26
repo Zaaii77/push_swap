@@ -6,7 +6,7 @@
 /*   By: lowatell <lowatell@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/24 23:20:47 by lowatell          #+#    #+#             */
-/*   Updated: 2024/11/25 20:41:04 by lowatell         ###   ########.fr       */
+/*   Updated: 2024/11/26 15:56:14 by lowatell         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,10 +33,7 @@ typedef struct s_stack
 	int		size;
 }	t_stack;
 
-//A DELETE
-void	print_stack(t_stack *a);
-void	print_stack_rev(t_stack *a);
-
+int		is_tab_sorted(char **tab);
 t_node	*new_node(int nb);
 t_stack	*stack_init(void);
 void	free_stack(t_stack *a);

@@ -6,7 +6,7 @@
 /*   By: lowatell <lowatell@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/25 19:08:15 by lowatell          #+#    #+#             */
-/*   Updated: 2024/11/26 12:23:12 by lowatell         ###   ########.fr       */
+/*   Updated: 2024/11/26 15:56:34 by lowatell         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -97,7 +97,7 @@ int	arg_parsing(int ac, char **av)
 		tab = ft_split(av[1], ' ');
 		if (!tab || !check_tab(tab))
 			return (free_tab(tab), 0);
-		if (!tab[1])
+		if (is_tab_sorted(tab))
 			return (free_tab(tab), 2);
 	}
 	else
