@@ -6,7 +6,7 @@
 /*   By: lowatell <lowatell@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/25 16:28:03 by lowatell          #+#    #+#             */
-/*   Updated: 2024/11/25 20:39:04 by lowatell         ###   ########.fr       */
+/*   Updated: 2024/11/26 11:59:55 by lowatell         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -97,5 +97,5 @@ void	free_stack(t_stack *a)
 
 void	print_error(void)
 {
-	ft_printf("Error\n");
+	write(2, "Error\n", 6);
 }
