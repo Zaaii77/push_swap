@@ -16,11 +16,15 @@ int	main(int ac, char **av)
 {
 	t_stack	*a;
 	t_stack	*b;
+	int		check;
 
 	if (ac < 2)
 		return (0);
-	if (!arg_parsing(ac, av))
+	check = arg_parsing(ac, av);
+	if (check == 0)
 		return (print_error(), 2);
+	if (check == 2)
+		return (0);
 	a = stack_init();
 	if (!a)
 		return (print_error(), 2);
@@ -30,12 +34,6 @@ int	main(int ac, char **av)
 	if (fill_stack(ac, av + 1, a))
 		sort(a, b);
 	else
-	{
-		free_stack(a);
-		free_stack(b);
-		return (print_error(), 2);
-	}
-	free_stack(a);
-	free_stack(b);
-	return (0);
+		return (free_stack(a), free_stack(b), print_error(), 2);
+	return (free_stack(a), free_stack(b), 0);
 }

@@ -97,6 +97,8 @@ int	arg_parsing(int ac, char **av)
 		tab = ft_split(av[1], ' ');
 		if (!tab || !check_tab(tab))
 			return (free_tab(tab), 0);
+		if (!tab[1])
+			return (free_tab(tab), 2);
 	}
 	else
 		if (!check_tab(av + 1))
