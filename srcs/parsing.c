@@ -6,7 +6,7 @@
 /*   By: lowatell <lowatell@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/25 19:08:15 by lowatell          #+#    #+#             */
-/*   Updated: 2024/11/26 15:56:34 by lowatell         ###   ########.fr       */
+/*   Updated: 2024/11/27 19:00:59 by lowatell         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,13 +41,15 @@ int	is_integer(char *s)
 	if (!s)
 		return (0);
 	i = 0;
+	while (s[i] == ' ')
+		i++;
 	if (s[i] == '-' || s[i] == '+')
 		i++;
 	if (!s[i])
 		return (0);
 	while (s[i])
 	{
-		if (!ft_isdigit(s[i]))
+		if (!ft_isdigit(s[i]) && s[i] != ' ')
 			return (0);
 		i++;
 	}
@@ -68,23 +70,32 @@ int	is_int_max(char *s)
 
 int	check_tab(char **av)
 {
-	int	i;
+	int		i;
+	int		j;
+	char	**tab;
 
 	if (!av)
 		return (0);
 	i = 0;
-	if (!is_dup(av))
-		return (0);
 	while (av[i])
 	{
-		if (is_int_max(av[i]) || !is_integer(av[i]))
+		j = 0;
+		tab = ft_split(av[i], ' ');
+		if (!tab)
 			return (0);
+		while (tab[j])
+		{
+			if ((is_int_max(tab[j]) || !is_integer(tab[j])))
+				return (free_tab(tab), 0);
+			j++;
+		}
+		free_tab(tab);
 		i++;
 	}
 	return (1);
 }
 
-int	arg_parsing(int ac, char **av)
+int	arg_parsing(char **av)
 {
 	char	**tab;
 
@@ -92,13 +103,11 @@ int	arg_parsing(int ac, char **av)
 		return (0);
 	else if (!av[1][0])
 		return (0);
-	else if (ac == 2)
+	else if ((av[1] && av[2]) && !av[3])
 	{
 		tab = ft_split(av[1], ' ');
 		if (!tab || !check_tab(tab))
 			return (free_tab(tab), 0);
-		if (is_tab_sorted(tab))
-			return (free_tab(tab), 2);
 	}
 	else
 		if (!check_tab(av + 1))

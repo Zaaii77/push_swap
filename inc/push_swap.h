@@ -6,7 +6,7 @@
 /*   By: lowatell <lowatell@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/24 23:20:47 by lowatell          #+#    #+#             */
-/*   Updated: 2024/11/26 15:56:14 by lowatell         ###   ########.fr       */
+/*   Updated: 2024/11/27 19:08:48 by lowatell         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,7 +33,6 @@ typedef struct s_stack
 	int		size;
 }	t_stack;
 
-int		is_tab_sorted(char **tab);
 t_node	*new_node(int nb);
 t_stack	*stack_init(void);
 void	free_stack(t_stack *a);
@@ -82,9 +81,10 @@ int		is_integer(char *s);
 int		is_dup(char **av);
 int		is_int_max(char *s);
 int		check_tab(char **av);
-int		arg_parsing(int ac, char **av);
+int		arg_parsing(char **av);
 
-int		fill_stack(int ac, char **av, t_stack *a);
+int		fill_stack(char **av, t_stack *a);
 void	print_error(void);
+int		is_stack_dup(t_stack *a);
 
 #endif

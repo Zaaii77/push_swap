@@ -6,12 +6,12 @@
 #    By: lowatell <lowatell@student.s19.be>         +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/08/20 13:23:46 by lowatell          #+#    #+#              #
-#    Updated: 2024/11/26 12:24:43 by lowatell         ###   ########.fr        #
+#    Updated: 2024/11/27 12:23:21 by lowatell         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 CC = cc
-CFLAGS = -Wall -Wextra -Werror
+CFLAGS = -g -Wall -Wextra -Werror
 RM = rm -rf
 
 SRC_DIR = srcs
@@ -36,7 +36,7 @@ $(OBJS_DIR):
 	@mkdir -p $(OBJS_DIR)
 
 clean:
-	@make clean -C libft
+	@make clean -C libft --no-print-directory
 	@$(RM) $(OBJS_DIR)
 	@echo "$(GREEN)Objects files have been deleted."
 
@@ -47,7 +47,7 @@ fclean: clean
 re: fclean all
 
 $(NAME): $(OBJS)
-	@make -C libft/
+	@make -C libft/ --no-print-directory
 	@mv libft/libft.a $(OBJS_DIR)/
 	@$(CC) $(CFLAGS) $(OBJS) $(OBJS_DIR)/libft.a -o $(NAME)
 	@echo "$(GREEN)$(NAME) has been compiled."

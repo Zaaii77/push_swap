@@ -6,7 +6,7 @@
 /*   By: lowatell <lowatell@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/24 23:33:57 by lowatell          #+#    #+#             */
-/*   Updated: 2024/11/26 15:55:52 by lowatell         ###   ########.fr       */
+/*   Updated: 2024/11/27 19:07:35 by lowatell         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -60,24 +60,24 @@ t_stack	*stack_init(void)
 	return (stack);
 }
 
-int	is_tab_sorted(char **tab)
+int	is_stack_dup(t_stack *a)
 {
-	int	i;
-	int	j;
+	t_node	*top;
+	t_node	*next;
 
-	if (!tab)
-		return (0);
-	i = 0;
-	while (tab[i])
+	if (!a || a->size < 2)
+		return (1);
+	top = a->top;
+	while (top)
 	{
-		j = i + 1;
-		while (tab[j])
+		next = top->next;
+		while (next)
 		{
-			if (tab[j] < tab[i])
+			if (top->nb == next->nb)
 				return (0);
-			j++;
+			next = next->next;
 		}
-		i++;
+		top = top->next;
 	}
 	return (1);
 }
