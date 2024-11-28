@@ -6,7 +6,7 @@
 /*   By: lowatell <lowatell@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/24 23:33:30 by lowatell          #+#    #+#             */
-/*   Updated: 2024/11/27 19:16:17 by lowatell         ###   ########.fr       */
+/*   Updated: 2024/11/28 14:02:37 by lowatell         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,8 @@ int	main(int ac, char **av)
 	t_stack	*a;
 	t_stack	*b;
 
-	(void)ac;
+	if (ac < 2)
+		return (0);
 	if (!arg_parsing(av))
 		return (print_error(), 2);
 	a = stack_init();
