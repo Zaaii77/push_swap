@@ -6,7 +6,7 @@
 /*   By: lowatell <lowatell@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/25 19:08:15 by lowatell          #+#    #+#             */
-/*   Updated: 2024/11/29 10:15:03 by lowatell         ###   ########.fr       */
+/*   Updated: 2024/11/29 10:45:12 by lowatell         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,7 +37,9 @@ int	is_dup(char **av)
 int	is_integer(char *s)
 {
 	int	i;
+	int	nbr;
 
+	nbr = 0;
 	if (!s)
 		return (0);
 	i = 0;
@@ -51,8 +53,12 @@ int	is_integer(char *s)
 	{
 		if (!ft_isdigit(s[i]) && s[i] != ' ')
 			return (0);
+		if (ft_isdigit(s[i]))
+			nbr++;
 		i++;
 	}
+	if (nbr == 0)
+		return (0);
 	return (1);
 }
 
@@ -109,7 +115,7 @@ int	arg_parsing(char **av)
 	else if ((av[1] && !av[2]))
 	{
 		tab = ft_split(av[1], ' ');
-		if (!tab || !check_tab(tab))
+		if (!tab || !check_tab(tab) || !is_integer(av[1]))
 			return (free_tab(tab), 0);
 	}
 	else
