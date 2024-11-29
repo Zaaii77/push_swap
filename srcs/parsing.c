@@ -6,7 +6,7 @@
 /*   By: lowatell <lowatell@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/25 19:08:15 by lowatell          #+#    #+#             */
-/*   Updated: 2024/11/28 14:11:28 by lowatell         ###   ########.fr       */
+/*   Updated: 2024/11/29 10:15:03 by lowatell         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -101,6 +101,7 @@ int	arg_parsing(char **av)
 {
 	char	**tab;
 
+	tab = NULL;
 	if (!av)
 		return (0);
 	else if (!av[1][0])
