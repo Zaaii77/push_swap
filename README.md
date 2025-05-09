@@ -32,7 +32,7 @@ The program uses two stacks (`a` and `b`) and performs operations to sort the in
 To clone the project, run:
 
 ```bash
-git clone git clone git@github.com:Zaaii77/push_swap.git
+git clone git@github.com:Zaaii77/push_swap.git
 cd push_swap
 ```
 
